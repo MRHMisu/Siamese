@@ -63,6 +63,44 @@
                             </outputDirectory>
                         </configuration>
                     </execution>
+
+                    <!--Generate CLexer and CParser-->
+                    <execution>
+                        <id>antlr4-c</id>
+                        <goals>
+                            <goal>antlr4</goal>
+                        </goals>
+                        <configuration>
+                            <arguments>
+                                <argument>-package</argument>
+                                <argument>crest.siamese.language.c</argument>
+                            </arguments>
+                            <sourceDirectory>${basedir}/src/main/antlr4/c</sourceDirectory>
+                            <outputDirectory>
+                                ${project.build.directory}/generated-sources/crest/siamese/language/c
+                            </outputDirectory>
+                        </configuration>
+                    </execution>
+
+                    <!--Generate CPPLexer and CPPParser-->
+                    <execution>
+                        <id>antlr4-cpp</id>
+                        <goals>
+                            <goal>antlr4</goal>
+                        </goals>
+                        <configuration>
+                            <arguments>
+                                <argument>-package</argument>
+                                <argument>crest.siamese.language.cpp</argument>
+                            </arguments>
+                            <sourceDirectory>${basedir}/src/main/antlr4/cpp</sourceDirectory>
+                            <outputDirectory>
+                                ${project.build.directory}/generated-sources/crest/siamese/language/cpp
+                            </outputDirectory>
+                        </configuration>
+                    </execution>
+
+
                 </executions>
             </plugin>
             <plugin>
