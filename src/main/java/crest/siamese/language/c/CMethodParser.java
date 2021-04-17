@@ -1,3 +1,19 @@
+/*
+   Copyright 2021 Md Rakib Hossain
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+ */
+
 package crest.siamese.language.c;
 
 import crest.siamese.document.Method;
@@ -108,7 +124,7 @@ public class CMethodParser implements MethodParser {
      * Create a  ParseTree for a given C source file.
      *
      * @param sourceFile C source file
-     * @return An instance of a ParseTree fot the give C source file.
+     * @return An instance of a ParseTree fot the given C source file.
      */
 
     protected ParseTree getParsedTree(File sourceFile) {
@@ -118,7 +134,7 @@ public class CMethodParser implements MethodParser {
         } catch (RuntimeException e) {
             System.out.println(e.getMessage());
         }
-        return getCParser(new File("empty.js")).translationUnit();
+        return getCParser(new File("empty.c")).translationUnit();
     }
 
 
@@ -126,7 +142,7 @@ public class CMethodParser implements MethodParser {
      * Create a  CParser for a given C source file.
      *
      * @param sourceFile C source file
-     * @return An instance of a CParser fot the give C source file.
+     * @return An instance of a CParser fot the given C source file.
      */
 
     protected CParser getCParser(File sourceFile) {

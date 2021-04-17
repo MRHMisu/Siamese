@@ -50,10 +50,6 @@ public class CParseTreeListener extends CBaseListener {
         buildMethod(ctx);
     }
 
-   /* @Override
-    public void enterFunctionSpecifier(CParser.FunctionSpecifierContext ctx) {
-        buildMethod(ctx);
-    }*/
 
 
     protected List<Method> getCMethods() {
