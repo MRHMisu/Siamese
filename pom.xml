@@ -100,6 +100,24 @@
                         </configuration>
                     </execution>
 
+                    <!--Generate CSharpLexer and CSharpParser-->
+                    <execution>
+                        <id>antlr4-csharp</id>
+                        <goals>
+                            <goal>antlr4</goal>
+                        </goals>
+                        <configuration>
+                            <arguments>
+                                <argument>-package</argument>
+                                <argument>crest.siamese.language.csharp</argument>
+                            </arguments>
+                            <sourceDirectory>${basedir}/src/main/antlr4/csharp</sourceDirectory>
+                            <outputDirectory>
+                                ${project.build.directory}/generated-sources/crest/siamese/language/csharp
+                            </outputDirectory>
+                        </configuration>
+                    </execution>
+
 
                 </executions>
             </plugin>
