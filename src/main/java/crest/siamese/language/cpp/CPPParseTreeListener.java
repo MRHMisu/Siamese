@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.Map;
 
 public class CPPParseTreeListener extends CPP14ParserBaseListener {
-    private List<Method> cMethods;
+    private List<Method> cppMethods;
     private String filePath;
     private final String START = "START";
     private final String END = "END";
@@ -41,7 +41,7 @@ public class CPPParseTreeListener extends CPP14ParserBaseListener {
      */
     public CPPParseTreeListener(String filePath) {
         this.filePath = filePath;
-        this.cMethods = new ArrayList<>();
+        this.cppMethods = new ArrayList<>();
 
     }
 
@@ -54,7 +54,7 @@ public class CPPParseTreeListener extends CPP14ParserBaseListener {
 
 
     protected List<Method> getCPPMethods() {
-        return this.cMethods;
+        return this.cppMethods;
     }
     /**
      * This method builds a Method object using the complete source code of the file.
@@ -91,7 +91,7 @@ public class CPPParseTreeListener extends CPP14ParserBaseListener {
 
         Method method = new Method(this.filePath, StringUtils.EMPTY, StringUtils.EMPTY, StringUtils.EMPTY,
                 StringUtils.EMPTY, src, startLine, endLine, parameters, StringUtils.EMPTY);
-        cMethods.add(method);
+        cppMethods.add(method);
 
     }
 
