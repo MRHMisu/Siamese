@@ -45,7 +45,7 @@ public class CParseTreeListener extends CBaseListener {
 
     }
 
-    @Override
+   @Override
     public void enterFunctionDefinition(CParser.FunctionDefinitionContext ctx) {
         buildMethod(ctx);
     }
@@ -93,6 +93,7 @@ public class CParseTreeListener extends CBaseListener {
         cMethods.add(method);
 
     }
+
 
     /**
      * This method is responsible for retrieving the source code from the ANTLR4 generated Parse Tree.
