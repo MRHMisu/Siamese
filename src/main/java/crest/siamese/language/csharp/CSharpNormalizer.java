@@ -46,7 +46,7 @@ public class CSharpNormalizer implements Normalizer {
             .put("DELIMITED_DOC_COMMENT", "")
             .put("SINGLE_LINE_COMMENT", "")
             .put("DELIMITED_COMMENT", "")
-            .put("WHITESPACES", "")
+            .put("WHITESPACES", "") //passes through hidden chanel
             .put("SHARP", "")
 
 
@@ -167,13 +167,13 @@ public class CSharpNormalizer implements Normalizer {
             .put("CHARACTER_LITERAL", NORMALIZED_TOKEN_VALUE)
 
             .put("REGULAR_STRING", NORMALIZED_TOKEN_STRING)
-            .put("VERBATIUM_STRING", NORMALIZED_TOKEN_STRING)
             //https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/verbatim
+            .put("VERBATIUM_STRING", NORMALIZED_TOKEN_STRING)
+
+            //https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated
             .put("INTERPOLATED_REGULAR_STRING_START", NORMALIZED_TOKEN_STRING)
             .put("INTERPOLATED_VERBATIUM_STRING_START", NORMALIZED_TOKEN_STRING)
-            //https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated
-
-
+            // keep the structure
             .put("OPEN_BRACE", "")
             .put("CLOSE_BRACE", "")
             .put("OPEN_BRACKET", "")
@@ -224,7 +224,7 @@ public class CSharpNormalizer implements Normalizer {
             .put("OP_COALESCING_ASSIGNMENT", NORMALIZED_TOKEN_OPERATOR)
             .put("OP_RANGE", NORMALIZED_TOKEN_OPERATOR)
 
-
+            // maintain the structure of source code
             .put("DOUBLE_CURLY_INSIDE", "")
             .put("OPEN_BRACE_INSIDE", "")
             .put("REGULAR_CHAR_INSIDE", "")
@@ -234,7 +234,10 @@ public class CSharpNormalizer implements Normalizer {
             .put("VERBATIUM_INSIDE_STRING", "")
             .put("CLOSE_BRACE_INSIDE", "")
             .put("FORMAT_STRING", "")
-            .put("DIRECTIVE_WHITESPACES", "")
+
+            //https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/preprocessor-directives
+            // preprocessor-directives are specific for compilation. In static analysis these will not be considered as source code tokens
+            .put("DIRECTIVE_WHITESPACES", "") //passes through hidden chanel
             .put("DIGITS", "")
             .put("DEFINE", "")
             .put("UNDEF", "")
